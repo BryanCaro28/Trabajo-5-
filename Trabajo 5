@@ -1,0 +1,55 @@
+# Trabajo-5-
+Solucion al problema de matrices 
+
+#Bryan Alexis Caro Ortiz
+#Ingenieria Electronica
+
+trabajador = ["trabajador1","trabajador2","trabajador3","trabajador4"]
+Dia = ["lunes","martes","miercoles","jueves","viernes"]
+horas = int()
+ #guardar informacion
+Tabla=[]                                                                
+
+print("tabla de trabajador")
+print("trabajador | "+" |".join(Dia))
+print ("escriba el trabajador 1")
+
+for i in range(len(trabajador)):
+    print (trabajador[i]) 
+print ("escriba el trabajador 1")
+
+respuesta = input().lower()
+
+for nombre in trabajador :
+    print(f"Ingrese las horas de {nombre}")
+    horas = []
+
+   #pedir horas por dia
+    for dia in Dia:  
+        h=int(input(f"horas trabajadas el {dia}:"))
+        horas.append(h)
+
+        #sumar horas
+    total=sum(horas)                                                     
+    print("horas registradas",horas)
+    print("total de horas trabajadas",total)
+    #clasificar
+    if total <=40:
+        clasificacion = "estandar"
+    else :
+        clasificacion = "sobretiempo"
+    
+    #GUARDAR TODA LA FILA EN LA TABLA
+    fila=[nombre]+horas+[total,clasificacion]
+    Tabla .append(fila)
+
+    #MOSTRAR TABLA FINAL
+    print("tabla final")
+    print("Trabajador | Lunes | martes | miercoles | jueves | viernes|  total | clasificacion")
+
+for fila in Tabla :
+    print (fila)
+
+
+else:
+    print("valor no valido")
